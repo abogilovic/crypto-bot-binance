@@ -1,0 +1,106 @@
+COMPOUNDING 10 only* top crypto by market cap, manually changing some vars on season changes
+0.075% trade commission
+Trading View od 1.januar 2018 do 17.maj 2021 test $1000
+BRUTEFORCED OPTIMAL ALGO VARIABLES:
+
+
+BIG MARKET CAP
+btc 838B 6% 2 -> 10433 47.88% 1.743		#CORE CRYPTO STORE OF VALUE				
+eth 404B 10% 3 -> 17201 48% 1.721		#CORE ALT + ETH 2.0 POS
+
+MEDIUM MARKET CAP
+bnb 82B 6% 2 -> 21855 50.15% 1.896		#CORE COIN OF BEST EXCHANGE
+ada 70B 2.2% 2 -> 64004 52.13% 2.283		#POS, SCALABLE ETC, GREAT LONGRUN, LOW ENERGY
+xrp 66B 10% 1 -> 36270 46.78% 2.281		#COMPANY OWNED - FOR BANKING STUFF
+doge 64B 20% 3 -> 6102163 47.77% 4.937		#INERTIVE HYPE - GOOD FOR ALGO
+
+SMALL MARKET CAP
+xlm 16B 11% 1 -> 28957 45.1% 1.936		
+link 16B 6% 2 -> 33297 50% 1.495
+sol 13B 3% 3 -> 6352 50.83% 1.814		#SPEED
+matic 10B 9% 2 -> 212419 53.09% 3.695		
+
+
+
+
+
+WATCH SEASON INDICATOR ONLINE AND CHANGE CORRESPONDING. ALSO DEPOSIT MORE MONEY WHEN FEAR INDICATOR iguess.
+
+BTC
+50 25 - 15 - 10
+MID
+33 30 - 22 - 15
+ALT
+25 35 - 22 - 18
+
+BTC SEASON: SEASON=BTC
+BM -> 75% -> BTC67% ETH33% -> final BTC50% ETH25%
+MM -> 15% -> 25% * 4 -> final 3.75% * 4
+SM -> 10% -> 25% * 4 -> final 2.5% * 4
+
+MID SEASON: SEASON=MID
+BM -> 63% -> BTC52.5% ETH47.5% -> final BTC33% ETH30%
+MM -> 22% -> 25% * 4 -> final 5.5% * 4
+SM -> 15% -> 25% * 4 -> final 3.75% * 4
+
+ALTCOIN SEASON: SEASON=ALT
+BM -> 60% -> BTC 41.7% ETH58.3% -> final BTC25% ETH35%
+MM -> 22% -> 25% * 4 -> final 5.5% * 4
+SM -> 18% -> 25% * 4 -> final 4.5% * 4
+
+(2H+C)/3 EMA12 SMA12, 2H, SEASON ALT, BM_COINS 2-0.75/0.63/0.6-0.67/0.33-0.525/0.475-0.417/0.583, MM_COINS 4/0.15/0.22/0.22, SM_COINS 4/0.10/0.15/0.18, MARKETS BTC/USDT-2-6,ETH/USDT-3-10,BNB/USDT-2-6,ADA/USDT-2-2.2,XRP/USDT-1-10,DOGE/USDT-3-20,XLM/USDT-1-11,LINK/USDT-2-6,SOL/USDT-3-3,MATIC/USDT-2-9
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+BTC SEASON:
+BM -> 64% -> BTC63% ETH37% -> final BTC40.32% ETH23.68%
+MM -> 24% -> 25% * 4 -> final 6% * 4
+SM -> 12% -> 25% * 4 -> final 3% * 4
+
+ALTCOIN SEASON:
+BM -> 50% -> BTC 40% ETH60% -> final BTC20% ETH30%
+MM -> 33% -> 25% * 4 -> final 8.25% * 4
+SM -> 17% -> 25% * 4 -> final 4.25% * 4
+
+(2H+C)/3 EMA12 SMA12, 2H, BTC_SEASON NO, BM_COINS 2-0.64/0.5-0.63/0.37-0.4/0.6, MM_COINS 4/0.24/0.33, SM_COINS 4/0.12/0.17, MARKETS BTC/USDT-2-6,ETH/USDT-3-10,BNB/USDT-2-6,ADA/USDT-2-2.2,XRP/USDT-1-10,DOGE/USDT-3-20,XLM/USDT-1-11,LINK/USDT-2-6,SOL/USDT-3-3,MATIC/USDT-2-9
+
+
+
+
+Trading View 0.04% default trade commission
+maj 10 vako nes 2021 tested
+
+btc 6% 14267 2.009
+eth 8% 21997 1.846
+bnb 12% 23131 1.907
+xrp 25% 41668 2.381
+doge 20% 5184142 5.328
+trx 15% 30577 2.698
+etc 25% 36398 2.737 44%
+
+v2
+0.21
+0.21
+0.18
+0.10
+0.10
+0.10
+0.10

@@ -1,0 +1,67 @@
+//@version=4
+// Make input options that configure backtest date range
+startDate = input(title="Start Date", type=input.integer,
+     defval=1, minval=1, maxval=31)
+startMonth = input(title="Start Month", type=input.integer,
+     defval=1, minval=1, maxval=12)
+startYear = input(title="Start Year", type=input.integer,
+     defval=2018, minval=1800, maxval=2100)
+
+endDate = input(title="End Date", type=input.integer,
+     defval=1, minval=1, maxval=31)
+endMonth = input(title="End Month", type=input.integer,
+     defval=7, minval=1, maxval=12)
+endYear = input(title="End Year", type=input.integer,
+     defval=2022, minval=1800, maxval=2100)
+
+
+
+strategy(title="LS-crypto-bot-g", shorttitle="LS-crypto-bot-g", overlay = true, precision = 8, max_bars_back = 25, pyramiding = 0, initial_capital = 10000, 
+     currency = currency.USD, default_qty_type = strategy.percent_of_equity, default_qty_value = 100, commission_type = "percent", commission_value = 0.04)
+LengthMA = input(12, minval=1)
+LengthEMA = input(12,minval=1)
+var bought = true
+var pos = 0
+strategy.risk.allow_entry_in(strategy.direction.all)
+
+
+inDateRange = (time >= timestamp(syminfo.timezone, startYear,
+         startMonth, startDate, 0, 0)) and
+     (time < timestamp(syminfo.timezone, endYear, endMonth, endDate, 0, 0))
+
+
+xMA = sma((2*high + close)/3.0, LengthMA)
+xEMA = ema((2*high + close)/3.0, LengthEMA)
+rov = (high-low)/volume
+
+
+barcolor(pos == -1 ? color.red: pos == 1 ? color.green : color.blue)
+ma_plot = plot(xMA, color=color.yellow, title="MA")
+sma_plot = plot(xEMA, color=color.red, title="EMA")
+fill(ma_plot, sma_plot, color=pos==1?color.green:color.red, transp=22, title="Band Filler")
+
+pos := xEMA >= xMA ? 1 : -1
+
+//strategy.entry("enter long", true, 1, when = open > high[1]) // enter long by market if current open great then previous high
+//strategy.entry("enter short", false, 1, when = open < low[1]) // enter short by market if current open less then previous low
+
+//strategy.entry("long", true, 1, when = open > high[1]) // enter long by market if current open great then previous high
+//strategy.exit("exit", "long", profit = 10, loss = 5) // generate full exit bracket (profit 10 points, loss 5 points per contract) from entry with name "long"
+
+if(inDateRange)
+    if(bought and pos == -1)
+        strategy.close_all()
+        strategy.entry("short", false)
+        bought := false
+    else if(not bought and pos == 1)
+        strategy.close_all()
+        strategy.entry("long", true)
+        bought := true
+
+//if(inDateRange)
+//    if(bought and pos == -1)
+//        strategy.order("close", false)
+//        bought := false
+//    else if(not bought and pos == 1)
+//        strategy.order("close", true)
+//        bought := true
